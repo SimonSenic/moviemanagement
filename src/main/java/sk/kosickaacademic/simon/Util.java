@@ -10,9 +10,9 @@ public class Util {
         return 0;
     }
 
-    public String normalizeString(String input){
-        if(input!=null || !input.equals(""))
-            return input.toUpperCase().charAt(0) + input.toLowerCase().substring(1);
+    public String normalizeString(String data){
+        if(data!=null || !data.equals(""))
+            return data.toUpperCase().charAt(0) + data.toLowerCase().substring(1);
 
         return null;
     }
