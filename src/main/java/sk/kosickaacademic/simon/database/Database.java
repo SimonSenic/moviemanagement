@@ -81,5 +81,33 @@ public class Database {
         return null;
     }
 
+    public boolean deleteMovie(int id){
+        String query = "DELETE FROM movie WHERE id = ?";
+        try(Connection con = getConnection()){
+            if(con!=null){
+                PreparedStatement ps = con.prepareStatement(query);
+                ps.setInt(1, id);
+                if(ps.executeUpdate()==1) return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean updateTitle(int id, String newTitle){
+        String query = "UPDATE movie SET title = ? WHERE id = ?";
+        try(Connection con = getConnection()){
+            if(con!=null){
+                PreparedStatement ps = con.prepareStatement(query);
+                ps.setString(1, newTitle);
+                ps.setInt(2, id);
+                if(ps.executeUpdate()==1) return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
 
 }

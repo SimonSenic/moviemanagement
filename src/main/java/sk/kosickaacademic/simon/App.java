@@ -14,6 +14,7 @@ public class App
     {
         //new Database().insertNewMovie(new Movie("LOrD Of the RIngS", "FAntasY", "pETEr JACKsoN", 2001));
         //new Database().getAllMovies();
+        //new Database().deleteMovie(9);
 
         SpringApplication.run(App.class, args);
     }
